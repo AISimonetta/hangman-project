@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class UserInteraction {
     private Scanner scanner = new Scanner(System.in);
 
-  //char for single character
+  //char for single character/ method to
     public char getGuessCharacter () {
         System.out.println("Please enter a letter: ");
         return scanner.next().charAt(0);
