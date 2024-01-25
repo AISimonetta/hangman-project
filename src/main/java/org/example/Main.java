@@ -66,16 +66,16 @@ public class Main {
     }
 
     // keep track guesses and lives
-    //IntelliJ recommended wrapping guess in valaueof
-
     private void checkGuess(char guess) {
         char guessUppercase = Character.toUpperCase(guess);
         guessedLetters += guess + " ";
         if (!wordToGuess.toUpperCase().contains(String.valueOf(guessUppercase))) {
             lives--;
-            System.out.println("Sorry, it's not a match.");
+            System.out.println("* SORRY, it's not a match.");
         } else {
             updateGuessedWord(guessUppercase);
+            System.out.println("* WELL DONE!, It is a match!");
+
         }
     }
 
@@ -92,9 +92,9 @@ public class Main {
         //show results if winning or loosing
     private void displayGameResult() {
         if (isWordGuessed()) {
-            System.out.println("Bravo! You guessed the word: " + wordToGuess);
+            System.out.println("* BRAVO! You guessed the word: " + wordToGuess);
         } else {
-            System.out.println("Sorry, you do not have any more lives left. The word was: " + wordToGuess);
+            System.out.println("* SORRY, you do not have any more lives left. The word was: " + wordToGuess);
         }
     }
 

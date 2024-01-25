@@ -6,5 +6,5 @@ public class Game  extends  Main {
         super(wordToGuess, guessedWord, guessedLetters, lives);
     }
 
-    //inheritance :connect to start-play game???
+    //inheritance to play again?
 }
