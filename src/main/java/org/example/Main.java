@@ -58,30 +58,44 @@ public class Main {
         return true;
     }
 
+
     //show status of my user interaction methods :displayWord,displayGuessedLetters & displayLives
     private void displayGameStatus() {
-        resultDisplay.displayGuessedLetters(guessedLetters);
         resultDisplay.displayWord(guessedWord);
         resultDisplay.displayLives(lives);
     }
 
     // keep track guesses and lives
     //IntelliJ recommended wrapping guess in valaueof
+
     private void checkGuess(char guess) {
+        char guessUppercase = Character.toUpperCase(guess);
         guessedLetters += guess + " ";
-        if (!wordToGuess.contains(String.valueOf(guess))) {
-            lives --;
+        if (!wordToGuess.toUpperCase().contains(String.valueOf(guessUppercase))) {
+            lives--;
+            System.out.println("Sorry, it's not a match.");
         } else {
-            updateGuessedWord((guess));
+            updateGuessedWord(guessUppercase);
         }
     }
 
+
     //update guess word if match
-    private void updateGuessedWord(char guess) {
+    private void updateGuessedWord(char guess){
+        for (int i = 0; i < wordToGuess.length(); i++) {
+            if (wordToGuess.charAt(i) == guess) {
+                guessedWord[i] = String.valueOf(guess);
+            }
+        }
     }
 
         //show results if winning or loosing
     private void displayGameResult() {
+        if (isWordGuessed()) {
+            System.out.println("Bravo! You guessed the word: " + wordToGuess);
+        } else {
+            System.out.println("Sorry, you do not have any more lives left. The word was: " + wordToGuess);
+        }
     }
 
     // needed to run programme

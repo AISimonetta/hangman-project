@@ -9,10 +9,7 @@ public class ResultsDisplay {
         }
         System.out.println();
     }
- /// to displayLetter : AWEIE
-    public void displayGuessedLetters(String guessedLetters) {
-        System.out.println("Letters guessed: " + guessedLetters);
-    }
+
 //show lives
     public void displayLives(int lives) {
         System.out.println("Lives left: " + lives);
