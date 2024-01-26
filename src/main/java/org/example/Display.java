@@ -1,10 +1,10 @@
 package org.example;
 
-public class ResultsDisplay {
+public class Display {
 
     /// to displayWord : "_ _ _ _ _ _"
     public void displayWord(String[] wordArray) {
-        System.out.println("* WORD TO GUESS : ");
+        System.out.println("* GUESS MY WORD : ");
         for (String letter : wordArray) {
             System.out.print( letter + " ");
         }

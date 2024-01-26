@@ -1,5 +1,4 @@
 package org.example;
-
 public class Main {
 
     //*****VARIABLES
@@ -7,17 +6,9 @@ public class Main {
     private String[] guessedWord;
     private String guessedLetters = "";
     private int lives;
-    private RandomWords randomWords;
-    private ResultsDisplay resultDisplay;
+    private Words randomWords;
+    private Display resultDisplay;
     private UserInteraction userInteraction;
-
-    //*****CONSTRUCTORS
-    public Main(String wordToGuess, String[] guessedWord, String guessedLetters, int lives) {
-        this.wordToGuess = wordToGuess;
-        this.guessedWord = guessedWord;
-        this.guessedLetters = guessedLetters;
-        this.lives = lives;
-    }
 
     public Main(String[] wordGuesses) {
         startGame(wordGuesses);
@@ -26,8 +17,8 @@ public class Main {
     //******METHODS
     //method to start game
     private void startGame(String[] wordGuesses) {
-        randomWords = new RandomWords(wordGuesses);
-        resultDisplay = new ResultsDisplay();
+        randomWords = new Words(wordGuesses);
+        resultDisplay = new Display();
         userInteraction = new UserInteraction();
         wordToGuess = randomWords.getRandomWord();
         guessedWord = new String[wordToGuess.length()];
@@ -58,7 +49,6 @@ public class Main {
         return true;
     }
 
-
     //show status of my user interaction methods :displayWord,displayGuessedLetters & displayLives
     private void displayGameStatus() {
         resultDisplay.displayWord(guessedWord);
@@ -75,10 +65,8 @@ public class Main {
         } else {
             updateGuessedWord(guessUppercase);
             System.out.println("* WELL DONE!, It is a match!");
-
         }
     }
-
 
     //update guess word if match
     private void updateGuessedWord(char guess){
@@ -89,12 +77,13 @@ public class Main {
         }
     }
 
-        //show results if winning or loosing
+    //show results if winning or loosing
     private void displayGameResult() {
         if (isWordGuessed()) {
-            System.out.println("* BRAVO! You guessed the word: " + wordToGuess);
+            System.out.println("* BRAVO! Your guessed word is " + wordToGuess);
         } else {
             System.out.println("* SORRY, you do not have any more lives left. The word was: " + wordToGuess);
+            //add  arestart option .. levels???
         }
     }
 

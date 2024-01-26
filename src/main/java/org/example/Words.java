@@ -2,11 +2,11 @@ package org.example;
 
 import java.util.Random;
 
-public class RandomWords {
+public class Words {
 
     String wordGuesses[] = { "Butterfly" , "Jupiter", "Whale", "Moon", "Cat", "Architecture", "Diamond"};
 
-    public RandomWords(String[] wordGuesses) {
+    public Words(String[] wordGuesses) {
         this.wordGuesses = wordGuesses;
     }
 
