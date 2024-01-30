@@ -3,7 +3,6 @@ package org.example;
 public class Game {
     private String[] wordGuesses;
     private int lives;
-    private int level;
 
     public Game(String[] wordGuesses, int lives) {
         this.wordGuesses = wordGuesses;
@@ -19,10 +18,6 @@ public class Game {
 
     public void decrementLives() {
         lives--;
-    }
-
-    public int getLevel() {
-        return level;
     }
 
     public String[] getWordGuesses() {

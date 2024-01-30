@@ -26,7 +26,7 @@ public class UserInteraction {
         return level;
     }
 
-//    public int playAgain() {
-//       return 1;
-//    }
+    public int playAgain() {
+       return 1;
+    }
 }
