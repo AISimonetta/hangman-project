@@ -3,10 +3,11 @@ package org.example;
 import java.util.Random;
 
 public class Words {
-
-    String wordGuesses[] = { "Butterfly" , "Jupiter", "Whale", "Moon", "Cat", "Architecture", "Diamond"};
+    //*****VARIABLES
+    private String[] wordGuesses;
 
     public Words(String[] wordGuesses) {
+
         this.wordGuesses = wordGuesses;
     }
 

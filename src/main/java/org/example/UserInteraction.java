@@ -18,4 +18,10 @@ public class UserInteraction {
         System.out.println("* INCORRECT INPUT, that is not a letter ");
         return getGuessCharacter();
     }
+    // Ask player to choose level of difficulty.
+    public int chooseALevel() {
+        System.out.println("* Please choose a level (1, 2, or 3): ");
+        int level = scanner.nextInt();
+        return level;
+    }
 }
