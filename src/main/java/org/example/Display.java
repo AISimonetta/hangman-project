@@ -11,7 +11,7 @@ public class Display {
         System.out.println();
     }
 
-//show lives
+    //show lives
     public void displayLives(int lives) {
         System.out.println("* Lives left: " + lives);
     }

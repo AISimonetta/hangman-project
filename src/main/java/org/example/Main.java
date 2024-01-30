@@ -15,7 +15,6 @@ public class Main {
 
     public void initializeGame() {
         userInteraction = new UserInteraction();
-        randomWords = new Words(null); // Initialize with null, set later based on level choice
         resultDisplay = new Display();
         wordToGuess = "";
         guessedWord = new String[]{};
@@ -38,6 +37,9 @@ public class Main {
                 currentGame = new LevelOne();
                 break;
         }
+
+        // Set word guesses based on the level choice
+        randomWords = new Words(currentGame.getWordGuesses());
 
         wordToGuess = randomWords.getRandomWord();
         guessedWord = new String[wordToGuess.length()];

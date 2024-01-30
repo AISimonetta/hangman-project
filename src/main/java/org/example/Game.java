@@ -10,22 +10,22 @@ public class Game {
         this.lives = lives;
     }
 
-//    // New method to set wordGuesses
     public void setWordGuesses(String wordToGuess) {
 }
 
-    // New method to get lives
     public int getLives() {
         return lives;
     }
 
-    // New method to decrement lives
     public void decrementLives() {
         lives--;
     }
 
-    // Existing method to get level
     public int getLevel() {
         return level;
+    }
+
+    public String[] getWordGuesses() {
+        return wordGuesses;
     }
 }
