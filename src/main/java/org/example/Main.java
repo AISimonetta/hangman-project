@@ -102,7 +102,9 @@ public class Main {
 
     public static void main(String[] argv) {
         Main game = new Main();
-        game.startGame();
-        game.playGame();
+        do {
+            game.startGame();
+            game.playGame();
+        } while (game.userInteraction.playAgain());
     }
 }

@@ -8,9 +8,8 @@ public class Game {
         this.wordGuesses = wordGuesses;
         this.lives = lives;
     }
-
     public void setWordGuesses(String wordToGuess) {
-}
+    }
 
     public int getLives() {
         return lives;
