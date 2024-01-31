@@ -24,7 +24,7 @@ public class UserInteraction {
         System.out.println("* INCORRECT INPUT, that is not a letter ");
         return getGuessCharacter();
     }
-
+    //Ask the user if he would like to play again.
     public boolean playAgain() {
         System.out.println("* Would you like to play again? ( 0 for No, 1 for Yes): ");
         boolean chooseToPlayAgain = scanner.nextInt() == 1;

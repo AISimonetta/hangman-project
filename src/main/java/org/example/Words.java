@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Random;
 
-public class Words implements  RandomWord {
+public class Words implements getRandomWord {
     //*****VARIABLES
     private String[] wordGuesses;
     // Initialize wordGuesses
@@ -13,7 +13,7 @@ public class Words implements  RandomWord {
     public Words(String[] wordGuesses) {
         this.wordGuesses = wordGuesses;
     }
-    @Override
+//    @Override
     public String getRandomWord() {
         Random random = new Random();
         int index = random.nextInt(wordGuesses.length);
