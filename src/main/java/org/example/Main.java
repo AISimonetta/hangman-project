@@ -1,18 +1,21 @@
 package org.example;
 
 public class Main {
-    private Game currentGame;
-    private String wordToGuess;
-    private String[] guessedWord;
+    //VARIABLES
+    private Game currentGame; //Instance of Game class
+    private String wordToGuess; // Random word selected
+    private String[] guessedWord; // Word Array representing quessed letters in the word
     private String guessedLetters = "";
-    private Words randomWords;
-    private Display resultDisplay;
-    private UserInteraction userInteraction;
+    private Words randomWords; //Instance of Word class
+    private Display resultDisplay;//Instance of Display class
+    private UserInteraction userInteraction; //Instance of UserInteraction class
+
 
     public Main() {
         initializeGame();
     }
 
+    // To initialize game and objects
     public void initializeGame() {
         userInteraction = new UserInteraction();
         resultDisplay = new Display();
@@ -20,6 +23,7 @@ public class Main {
         guessedWord = new String[]{};
     }
 
+    //User can choose level and the game will be set up accordingly
     public void startGame() {
         int levelChoice = userInteraction.chooseALevel();
         switch (levelChoice) {
@@ -49,29 +53,32 @@ public class Main {
         currentGame.setWordGuesses(wordToGuess);
     }
 
+    //the user will make guesses till the game ends and no mpre lives
     public void playGame() {
         while (currentGame.getLives() > 0 && !isWordGuessed()) {
             displayGameStatus();
-            char guess = userInteraction.getGuessCharacter();
+            char guess = userInteraction.getGuessCharacter(); //Gets the letter from user
             checkGuess(guess);
         }
         displayGameResult();
     }
 
+    //If the word is guessed returns T otherwise is F
     private boolean isWordGuessed() {
         for (String letter : guessedWord) {
-            if (letter.equals("_")) {
+            if (letter.equals("_")) { // if it is "_" the letter was no guessed so= F.
                 return false;
             }
         }
         return true;
     }
-
+//shows state of the game
     private void displayGameStatus() {
         resultDisplay.displayWord(guessedWord);
         resultDisplay.displayLives(currentGame.getLives());
     }
 
+    //This methods checks if guessed letter is correct  and updates game
     private void checkGuess(char guess) {
         char guessUppercase = Character.toUpperCase(guess);
         guessedLetters += guess + " ";
@@ -84,6 +91,7 @@ public class Main {
         }
     }
 
+    //updates the word (array)  based on the correct guesses from the user
     private void updateGuessedWord(char guess) {
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == guess) {
@@ -92,6 +100,7 @@ public class Main {
         }
     }
 
+    //Shows is users wins or not.
     private void displayGameResult() {
         if (isWordGuessed()) {
             System.out.println("* BRAVO! Your guessed word is " + wordToGuess);
@@ -100,6 +109,7 @@ public class Main {
         }
     }
 
+    //needed/compulsory for the game to be initiated
     public static void main(String[] argv) {
         Main game = new Main();
         do {

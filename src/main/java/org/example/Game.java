@@ -17,17 +17,17 @@ public class Game {
     public void setWordGuesses(String wordToGuess) {
     }
 
-    //Function that returns the lives left
+    //Function that returns the lives left//getter
     public int getLives() {
         return lives;
     }
 
-    //Function that decrements the lives by 1.
+    //Function that decrements the lives by 1.//setter
     public void decrementLives() {
         lives--;
     }
 
-    //Function that will return the array with the words that can be guessed.
+    //Function that will return the array with the words that can be guessed.//getter
     public String[] getWordGuesses() {
         return wordGuesses;
     }
