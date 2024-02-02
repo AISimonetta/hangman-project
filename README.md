@@ -1,6 +1,6 @@
 ✦HangMan Game Project✦
 
-This project involved developing a functional game based on Java's Object-Oriented Programming (OOP) principles. In short, the game prompts the user to input a word for themselves or another person to guess. The program then obscures the word. Subsequently, the program informs the user whether their guessed letter is present in the word or not, displaying the progress of the censored word after each guess.
+This project involved developing a functional game based on Java's Object-Oriented Programming (OOP) principles. In short, the game prompts the user to input a word for themselves or another person to guess. The program then obscures the word. Subsequently, the program informs the user whether their guessed letter is present in the word or not, displaying the progress of the word after each guess.
 
 ✦Technologies used:
 
